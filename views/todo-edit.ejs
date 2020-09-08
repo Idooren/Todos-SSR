@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <title>Todos SSR</title>
+  </head>
+
+  <body>
+    <h1><%= (todo.id)? 'Update Todo' : 'Add Todo' %></h1>
+    <form action="<%= (todo.id)? '/todo/update' : '/todo/add' %>" method="post">
+        <input type="hidden" name="id" value="<%= todo.id%>" />
+
+      <input
+        type="text"
+        name="txt"
+        value="<%= todo.txt%>"
+        placeholder="What Todo?"
+      />
+
+      <label>
+           <input name="isDone" value="true" type="checkbox" />
+            Done 
+      </label>
+
+      <select name="priority">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+
+<label> </label>
+      <input list="category" name="category" />
+      <datalist id="category">
+        <option value="grociries"></option>
+        <option value="Home"> </option>
+        <option value="Kids CHugim"> </option>
+      </datalist>
+
+      <input type="color" name="backgroundColor" class="bg-color" />
+
+      <button type="submit">Save</button>
+    </form>
+  </body>
+</html>

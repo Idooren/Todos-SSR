@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App SSR</title>
+</head>
+
+<body>
+    <h1>Todo App </h1>
+        <form action="/setUser" method="post">
+            <input type="text" name="nickname" placeholder="User name" />
+            <div>
+                Start new list 
+            </div>
+            <h2><%= captcha.num1 + '+' + captcha.num2 %> = ?</h2>
+            <input type="text" name="userAnswer" placeholder="prove u r not a monkey" />
+            <br>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+</body>
+
+</html>
